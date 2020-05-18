@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Добавить пароль {% endblock %}
+
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    {{ loginpassword.login }}
+    {{ loginpassword.password }}
+    {{ form.as_p }}
+    <input type="submit" value="Сохранить">
+    <input type="submit" name="cancel" value="cancel">
+  </form>
+{% endblock %}

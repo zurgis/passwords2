@@ -1,0 +1,8 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  {{ block.super }}
+  {% for appinfo in appsinfo %}
+    <p><h3><a href="{% url 'main:loginspasswords' appinfo.name_app %}">{{ appinfo }}</a></h3></p>
+  {% endfor %}
+{% endblock %}
